@@ -66,9 +66,6 @@ function playGame() {
     gameCount++;
   }
 
-  console.log(gameCount);
-  console.log(humanScore);
-
   if (gameCount === 5) {
     if (humanScore > computerScore) {
       return console.log("You win!");
