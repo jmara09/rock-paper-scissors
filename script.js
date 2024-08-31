@@ -13,24 +13,12 @@ function getComputerChoice() {
 function getHumanChoice(e) {
   let choice = e.target.textContent.toLowerCase();
   return choice;
-  // choice = choice.toLowerCase();
-
-  // if (choice !== "rock" && choice !== "paper" && choice !== "scissors") {
-  //   alert(
-  //     "Invalid input. Please choose one of the following: rock, paper, scissors."
-  //   );
-  //   getHumanChoice();
-  // } else {
-  //   return choice;
-  // }
 }
 
 let humanScore = 0;
 let computerScore = 0;
 let scoreBoard = document.querySelector("#score");
 scoreBoard.textContent = `You: ${humanScore} - Comp: ${computerScore}`;
-// let score = document.querySelector("#score");
-// score.appendChild(scoreBoard);
 
 function playGame(e) {
   let humanChoice = getHumanChoice(e);
