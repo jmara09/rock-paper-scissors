@@ -54,13 +54,19 @@ function playGame(e) {
     }
   }
 
-  scoreBoard.textContent = `You: ${humanScore} - Comp: ${computerScore}`;
-
   if (humanScore === 5) {
-    result.textContent = "Congratulations! You won the game.";
+    alert(
+      `You: ${humanScore} - Comp: ${computerScore}\nCongratulations! You won the game.`
+    );
+    humanScore = 0;
+    computerScore = 0;
   } else if (computerScore === 5) {
-    result.textContent = "Too bad. You lose.";
+    alert(`You: ${humanScore} - Comp: ${computerScore}\nToo bad. You lose.`);
+    humanScore = 0;
+    computerScore = 0;
   }
+
+  scoreBoard.textContent = `You: ${humanScore} - Comp: ${computerScore}`;
 }
 
 let list = document.querySelector("ul");
