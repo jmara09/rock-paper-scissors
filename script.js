@@ -25,15 +25,16 @@ function getHumanChoice(e) {
   // }
 }
 
-function playGame(e) {
-  let humanScore = 0;
-  let computerScore = 0;
+let humanScore = 0;
+let computerScore = 0;
+let scoreBoard = document.querySelector("#score");
+scoreBoard.textContent = `You: ${humanScore} - Comp: ${computerScore}`;
+// let score = document.querySelector("#score");
+// score.appendChild(scoreBoard);
 
+function playGame(e) {
   let humanChoice = getHumanChoice(e);
   let computerChoice = getComputerChoice();
-
-  let scoreBoard = document.querySelector("#score");
-  scoreBoard.textContent = `You: ${humanScore} - Comp: ${computerScore}`;
 
   let result = document.querySelector("#result");
 
@@ -63,6 +64,14 @@ function playGame(e) {
       computerScore++;
       result.textContent = `You lose! Rock beats Scissors`;
     }
+  }
+
+  scoreBoard.textContent = `You: ${humanScore} - Comp: ${computerScore}`;
+
+  if (humanScore === 5) {
+    result.textContent = "Congratulations! You won the game.";
+  } else if (computerScore === 5) {
+    result.textContent = "Too bad. You lose.";
   }
 }
 
